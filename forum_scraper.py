@@ -52,9 +52,7 @@ print(f"Keyword     : {args.keyword}")
 print(f"Run Session : {session_id}")
 print("=" * 72)
 
-#Username: diesertomasz
-#Password: rtkPMCke^06%yopS
-#DER SPIEGEL
+
 
 # ============================================================
 # Main scraper class
@@ -127,7 +125,7 @@ class BoerseScraper:
                 f"-session-{session_id}"
             )
 
-            proxy_password = "5x51up7gczu1"
+            proxy_password = "Brigth data password"
 
             proxy_url = (
                 f"http://{proxy_username}:{proxy_password}"
