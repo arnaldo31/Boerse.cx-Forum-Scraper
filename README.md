@@ -100,16 +100,43 @@ boerse-scraper/
 
 # CONFIGURATION
 
-If using a proxy, set your Bright Data proxy password near the top of the script:
+If using a proxy, set your Bright Data proxy password near the top of **forum_scraper.py** (around line 20).
+
+```python
+import uuid
+import logging
+from datetime import datetime
+import time
+import random
+import traceback
+
+# ============================================================
+# Global run identifiers and logging configuration
+# ============================================================
+session_id = uuid.uuid4().hex[:12]
+
+# Set your Bright Data proxy password here
+PROXYPASSWORD = ""
+
+today = datetime.today()
+date_save = today.strftime("%Y-%m-%d")
+
+logging.basicConfig(
+    filename="boerseLog.log",
+    level=logging.INFO,
+    encoding="utf-8",
+    format="%(asctime)s : %(message)s",
+    datefmt="%d-%b-%y %H:%M:%S",
+)
+```
+
+Example:
 
 ```python
 PROXYPASSWORD = "YOUR_PROXY_PASSWORD"
 ```
 
-The `PROXYPASSWORD` variable is located around **line 20** of `forum_scraper.py`.
-
 ---
-
 ## Normal Mode
 
 ```bash
