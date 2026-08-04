@@ -17,6 +17,7 @@ import traceback
 # Global run identifiers and logging configuration
 # ============================================================
 session_id = uuid.uuid4().hex[:12]
+PROXYPASSWORD = ''
 
 today = datetime.today()
 date_save = today.strftime("%Y-%m-%d")
@@ -51,7 +52,6 @@ print(f"Password    : {args.password}")
 print(f"Keyword     : {args.keyword}")
 print(f"Run Session : {session_id}")
 print("=" * 72)
-
 
 
 # ============================================================
@@ -125,7 +125,11 @@ class BoerseScraper:
                 f"-session-{session_id}"
             )
 
-            proxy_password = "Brigth data password"
+            proxy_password = PROXYPASSWORD
+            if proxy_password == "":
+                print('Error! no proxy_password Set up ')
+                self.exit()
+                
 
             proxy_url = (
                 f"http://{proxy_username}:{proxy_password}"
