@@ -1,6 +1,6 @@
 # Boerse.cx Forum Scraper (Python + Requests + BeautifulSoup)
 
-A Python scraper for the **Boerse.cx** forum that searches using a specified keyword and supports both **Normal** and **Deep** scraping modes. The `--keyword` and `--mode` command-line arguments are **required**. The scraper automatically reuses saved login cookies, optionally logs in using a username and password when `cookies.json` is missing or the session has expired, supports optional proxy usage, removes duplicate download links, and exports the extracted results as structured JSON files.
+A Python scraper for the **Boerse.cx** forum that searches using a specified keyword and supports both **Normal** and **Deep** scraping modes. The `--keyword` and `--mode` command-line arguments are **required**. The scraper automatically reuses saved login cookies, optionally logs in using a username and password when `cookies.json` is missing or the session has expired, supports optional proxy usage, extracts download links only from supported file-hosting websites, skips all unsupported hosts, removes duplicate download links, and exports the extracted results as structured JSON files.
 
 The scraper supports:
 
@@ -11,8 +11,23 @@ The scraper supports:
 - Automatic Duplicate Removal
 - Resume Support
 - JSON Output
+- Supported Hoster Filtering
+
 ---
 
+## Supported Download Hosts
+
+The scraper only saves download links from the following supported file-hosting websites:
+
+- ddownload.com
+- uploadrar.com
+- mega4upload.net
+- rapidgator.net
+- katfile.com
+- turbobit.net
+- nitroflare.com
+
+Any download links from websites **not included in this list are automatically skipped and will not be saved**.
 # INSTALLATION
 
 ## 1. Install Python
