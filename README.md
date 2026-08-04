@@ -96,6 +96,20 @@ boerse-scraper/
 
 # HOW TO RUN
 
+---
+
+# CONFIGURATION
+
+If using a proxy, set your Bright Data proxy password near the top of the script:
+
+```python
+PROXYPASSWORD = "YOUR_PROXY_PASSWORD"
+```
+
+The `PROXYPASSWORD` variable is located around **line 20** of `forum_scraper.py`.
+
+---
+
 ## Normal Mode
 
 ```bash
