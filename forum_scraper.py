@@ -169,6 +169,10 @@ class BoerseScraper:
 
         response = self.ses.post('https://boerse.cx/login/login', data=data)
         print(f"[LOGIN] Response status: {response.status_code}")
+        if response.status_code != 200:
+            print('Failed to log in !')
+            print('Check username / password if valid')
+            self.exit()
 
         cookies = requests.utils.dict_from_cookiejar(self.ses.cookies)
 
