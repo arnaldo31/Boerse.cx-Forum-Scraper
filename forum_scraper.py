@@ -345,7 +345,7 @@ class BoerseScraper:
         logtitle = ' completed - ' + title + ' | url - ' + link
         logging.info(logtitle)
 
-        delay = random.uniform(2.0, 4.7)
+        delay = random.uniform(1.2, 3.4)
         print(f'[DELAY] Waiting {delay:.2f} seconds before the next request...')
         time.sleep(delay)
 
